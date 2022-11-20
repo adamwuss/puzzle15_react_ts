@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-const Tile = styled.div`
+import { TileProps } from './Tile.types';
+
+const Tile = styled.div<Pick<TileProps, "number" | "cursorStyle">>`
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -11,6 +13,8 @@ const Tile = styled.div`
   font-size: 25px;
   margin: 5px;
   user-select: none;
+  opacity: ${({ number }) => number ? 100 : 0};
+  cursor:  ${({ cursorStyle }) => cursorStyle ? "pointer" : "default"};
 `
 
 export default {
