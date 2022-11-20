@@ -1,15 +1,17 @@
-import { SOLUTION } from '../../utils/constants';
+import { Tile, BoardNumbers } from 'components/Game/Game.types';
+
+import { SOLUTION } from 'utils/constants';
 
 import tileNextToEmpty from './tileNextToEmpty';
 
-const moveTile = (number: number, configuration: number[], setConfiguration: (updateConfiguration: number[]) => void) => {
-  const indexTile = configuration.indexOf(number);
+const moveTile = (tile: Tile, configuration: BoardNumbers, setConfiguration: (updateConfiguration: BoardNumbers) => void) => {
+  const indexTile = configuration.indexOf(tile);
   const indexEmpty = configuration.indexOf(0);
 
-  if (tileNextToEmpty(number, configuration)) {
+  if (tileNextToEmpty(tile, configuration)) {
     const updateConfiguration = [...configuration];
     updateConfiguration[indexTile] = 0;
-    updateConfiguration[indexEmpty] = number;
+    updateConfiguration[indexEmpty] = tile;
 
     setConfiguration(updateConfiguration);
 

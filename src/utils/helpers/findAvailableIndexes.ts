@@ -1,4 +1,7 @@
-const findAvailableIndexes = (indexZero: number) => {
+import { Tile } from 'components/Game/Game.types';
+
+
+const findAvailableIndexes = (indexZero: Tile) => {
   if (indexZero === 0) {
     return [indexZero + 1, indexZero + 4];
   }

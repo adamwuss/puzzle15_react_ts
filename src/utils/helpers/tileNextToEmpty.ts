@@ -1,5 +1,7 @@
-const tileNextToEmpty = (number: number, actualConfiguration: number[]) => {
-  const indexTile = actualConfiguration.indexOf(number);
+import { Tile, BoardNumbers } from 'components/Game/Game.types';
+
+const tileNextToEmpty = (tile: Tile, actualConfiguration: BoardNumbers) => {
+  const indexTile = actualConfiguration.indexOf(tile);
   const indexZero = actualConfiguration.indexOf(0);
 
   if (indexTile === (indexZero - 1) && ![0, 4, 8, 12].includes(indexZero)) {

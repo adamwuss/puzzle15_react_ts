@@ -1,6 +1,8 @@
+import { BoardNumbers } from 'components/Game/Game.types';
+
 import { findAvailableIndexes } from './index';
 
-const shuffleArray = (array: number[]) => {
+const shuffleArray = (array: BoardNumbers) => {
   const copyArray = JSON.parse(JSON.stringify(array));
   let currentIndex = 1000;
 
